@@ -1,0 +1,15 @@
+[skill]
+name = "simplecadapi"
+source = "skill"
+
+[build]
+targets = ["omp", "opencode", "zcode", "claudecode", "codex", "dsh", "kimicode"]
+
+[build.output]
+omp = "builds/simplecadapi-omp"
+opencode = "builds/simplecadapi-opencode"
+zcode = "builds/simplecadapi-zcode"
+claudecode = "builds/simplecadapi-claudecode"
+codex = "builds/simplecadapi-codex"
+dsh = "builds/simplecadapi-dsh"
+kimicode = "builds/simplecadapi-kimicode"
