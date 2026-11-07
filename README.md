@@ -6,7 +6,7 @@ SimpleCADAPI 2.2.7 Agent Skill（`simplecadapi`）的改版：**STEP 逆向工�
 
 | 文件 | 改动 |
 |---|---|
-| `skill/references/workflows/step-reconstruction.md` | 整篇重写：固定 6 步流程（读 IR → 规划特征 → 写 notebook 主体 → 评测 → 加倒角圆角 → 只修出错单元格 → report.json）、该读和不该读的文件、网页编辑器 notebook 格式规则、2.2.7 实测 API 卡片、选边配方 |
+| `skill/references/workflows/step-reconstruction.md` | 整篇重写：固定 6 步流程（读 IR → 推断设计意图并规划特征 → 写 notebook 主体 → 评测 → 加倒角圆角 → 只修出错单元格 → report.json）；建模要求（设计尺寸做参数、派生值写成表达式、草图带约束、特征按依赖定位、重复特征用阵列/镜像）；修复对照表；停止条件（`ok` 或特征树已合理且无法再用干净建模提升）；网页编辑器 notebook 格式、2.2.7 实测 API 卡片（含草图约束与阵列）、选边配方 |
 | `skill/references/inspect/stepir.md` | 新增：STEPIR v6.2 的完整格式、每类记录怎么对应到 SimpleCAD 调用、注意事项（局部坐标系 `y = n × x`、顺时针弧交换起止点、`ext`/`cut` 方向等） |
 | `skill/scripts/stepir.py` | 新增：STEPIR v6.2.2 单文件版（STEP → IR，`query face/evidence/axis/neighbours` 按需查询） |
 | `skill/scripts/stepeval.py` | 新增：一条命令完成 notebook 格式检查、新进程运行、与目标比较（体积 IoU、缺失/多余区域、按 STEPIR 归一化后的面数与曲面类型完整性，不受原文件面切分方式影响），输出一行 JSON，`"ok": true` 为验收 |
