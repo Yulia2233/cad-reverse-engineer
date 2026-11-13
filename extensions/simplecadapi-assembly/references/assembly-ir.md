@@ -35,11 +35,13 @@ not a modeling history and does not decide engineering intent by itself.
 
 ## Interpretation
 
-Use source placement as the default pose for every occurrence. Build an
-explicit constraint only when evidence supports the relation and the expected
-motion. Source proximity, overlap, coaxiality, or contact can inform a
-hypothesis but does not, alone, identify a fixed, revolute, or prismatic
-joint.
+Use source placement as the default pose for every occurrence. The controller
+scaffold's fixed constraints preserve those poses as an explicit static
+assumption; they do not identify physical fixed interfaces. Infer a physical
+mate or replace a fixed edge with a motion constraint only when evidence
+supports the relation and expected motion. Source proximity, overlap,
+coaxiality, or contact can inform a hypothesis but does not, alone, identify
+a fixed, revolute, or prismatic joint.
 
 For large projects, use the controller-generated bounded context index and
 its pages. The full manifest and STEPIR files remain authoritative snapshots

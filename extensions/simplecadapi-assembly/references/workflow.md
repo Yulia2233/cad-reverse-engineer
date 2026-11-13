@@ -30,9 +30,12 @@ byte-for-byte as source snapshots and record their hashes. Put one unique part
 notebook under each stable path, for example
 `parts/part-000/model.py`. Put the assembly notebook at `product.py`.
 
-Use the composition rules in `notebook-composition.md`. Adapt only the product
-identity in a copied notebook when required by the assembly runtime. Compare
-the adapted child with its source and verify that its geometry is unchanged.
+Use the composition rules in `notebook-composition.md`. In controller-owned
+copies, adapt the product identity and add the static connector frames needed
+by the scaffold. Use the recorded `make_part_rpart` constructor adaptation
+when needed to capture those connectors in the modeling graph. Preserve the
+child's geometry and modeling history; compare the copied source with its
+snapshot and verify that its geometry is unchanged.
 
 ## 3. Preserve occurrences and source poses
 
@@ -63,9 +66,12 @@ local connector frames over raw face indices. Use face/edge queries only on
 the corresponding child IR or reconstructed child geometry, and do not map a
 target face ID directly to a rebuilt face index.
 
-Use a fixed constraint only when the supplied evidence supports a fixed
-interface. Use a revolute or prismatic constraint only when both geometry and
-the stated or strongly supported function justify that motion. Omit guessed
+The scaffold's fixed constraints at recorded source poses are explicit static
+assumptions, not claims that physical fixed interfaces were recovered. Retain
+those defaults for unresolved and unreviewed occurrences. Claim a physical
+fixed interface only when supplied evidence supports it. Replace a scaffold
+edge with a revolute or prismatic constraint only when both geometry and the
+stated or strongly supported function justify that motion. Omit guessed
 travel limits or drive values. Ground only the component or components that
 define the product frame; do not ground every part as a shortcut.
 
