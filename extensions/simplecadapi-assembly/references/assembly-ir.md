@@ -41,6 +41,13 @@ motion. Source proximity, overlap, coaxiality, or contact can inform a
 hypothesis but does not, alone, identify a fixed, revolute, or prismatic
 joint.
 
+For large projects, use the controller-generated bounded context index and
+its pages. The full manifest and STEPIR files remain authoritative snapshots
+for hash verification and evaluation, but must not all be read into the model
+context. Inspect local STEPIR evidence only for candidate groups selected for
+review. The controller-generated static scaffold is the complete occurrence
+baseline; do not recreate it from a partial context window.
+
 When a relation is ambiguous or the constraint solver cannot preserve the
 required pose, keep the source placement and report the relation as unresolved
 or degraded. Never rewrite the measured IR to make an inferred mate appear as
